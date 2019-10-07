@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TileComponent } from './tile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TileComponent', () => {
   let component: TileComponent;
@@ -10,6 +11,9 @@ describe('TileComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         TileComponent
+      ],
+      imports: [
+        BrowserAnimationsModule
       ]
     })
     .compileComponents();
