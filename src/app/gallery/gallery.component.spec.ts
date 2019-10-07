@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { GalleryComponent } from './gallery.component';
 import { TileComponent } from '../tile/tile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 
 describe('GalleryComponent', () => {
   let component: GalleryComponent;
@@ -15,7 +16,8 @@ describe('GalleryComponent', () => {
         TileComponent
       ],
       imports: [
-        HttpClientModule
+        HttpClientModule,
+        VirtualScrollerModule
       ]
     })
     .compileComponents();
