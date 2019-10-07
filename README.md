@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
+[Demo link](https://kaera.github.io)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -28,6 +30,7 @@ I considered three options for the gallery layout:
 - flex layout
 - grid layout
 - just using display: inline-block for tiles
+
 I've decided to stay with the grid layout, mainly because both flex and inline-block approaches have "align last row" issue: if the last row is not fully occupied by the tiles (e.g. in case of 10 items and 3 columns) then the tiles don't align properly.
 
 ### Steps
