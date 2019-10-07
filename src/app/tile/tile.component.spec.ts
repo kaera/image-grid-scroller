@@ -8,7 +8,9 @@ describe('TileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TileComponent ]
+      declarations: [
+        TileComponent
+      ]
     })
     .compileComponents();
   }));
@@ -16,6 +18,7 @@ describe('TileComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TileComponent);
     component = fixture.componentInstance;
+    component.image = { src: 'url_to_image' };
     fixture.detectChanges();
   });
 

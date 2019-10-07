@@ -23,7 +23,7 @@ export class ImageService {
     const perPage = isInitialFetch ? 100 : 500;
     const queryString = [
       'api_key=' + config.apiKey,
-      'text=amsterdam',
+      'text=' + config.searchQuery,
       'sort=relevance',
       'method=flickr.photos.search',
       'extras=url_s',
@@ -37,6 +37,7 @@ export class ImageService {
     this.http.get(url)
       .subscribe(({ photos: { photo } }: any) => {
         const images = photo
+          .filter(({ height_s }) => height_s >= 160 && height_s <= 180)
           .map(({ url_s }) => {
             return {
               src: url_s

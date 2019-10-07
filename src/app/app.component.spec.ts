@@ -1,12 +1,20 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { TileComponent } from './tile/tile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        GalleryComponent,
+        TileComponent
       ],
+      imports: [
+        HttpClientModule
+      ]
     }).compileComponents();
   }));
 
@@ -26,6 +34,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('image-grid-scroller app is running!');
+    expect(compiled.textContent).toContain('Loading...');
   });
 });

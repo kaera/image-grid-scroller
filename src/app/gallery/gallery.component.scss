@@ -1,0 +1,10 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  justify-content: center;
+  app-tile {
+    width: 240px;
+    height: 160px;
+    margin: 10px;
+  }
+}

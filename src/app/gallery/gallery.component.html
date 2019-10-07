@@ -1,1 +1,4 @@
-<p>gallery works!</p>
+<div class="gallery">
+  <p *ngIf="(images$ | async).length === 0">Loading...</p>
+  <app-tile *ngFor="let image of images$ | async" [image]="image"></app-tile>
+</div>
