@@ -26,7 +26,7 @@ export class ImageService {
       'text=' + config.searchQuery,
       'sort=relevance',
       'method=flickr.photos.search',
-      'extras=url_s',
+      'extras=description%2Cowner_name%2Curl_s',
       'page=' + page,
       'per_page=' + perPage,
       'format=json',
@@ -38,9 +38,11 @@ export class ImageService {
       .subscribe(({ photos: { photo } }: any) => {
         const images = photo
           .filter(({ height_s }) => height_s >= 160 && height_s <= 180)
-          .map(({ url_s }) => {
+          .map(({ description, ownername, title, url_s }) => {
             return {
-              src: url_s
+              description,
+              src: url_s,
+              title: `${title} - ${ownername}`
             }
           });
           const nextValue = this.images.getValue().concat(images);

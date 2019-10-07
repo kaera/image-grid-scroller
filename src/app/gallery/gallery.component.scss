@@ -1,11 +1,15 @@
 .gallery {
+  .loader {
+    text-align: center;
+  }
   virtual-scroller {
     width: 100%;
     height: 1000px;
   }
   app-tile {
     width: 240px;
-    height: 160px;
+    height: 180px;
     margin: 10px;
+    overflow: hidden;
   }
 }

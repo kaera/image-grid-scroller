@@ -1,5 +1,5 @@
 <div class="gallery">
-  <p *ngIf="(images$ | async).length === 0">Loading...</p>
+  <p *ngIf="(images$ | async).length === 0" class="loader">Loading...</p>
   <virtual-scroller #scroll [items]="images$ | async" [parentScroll]="scroll.window">
     <app-tile *ngFor="let image of scroll.viewPortItems" [image]="image"></app-tile>
   </virtual-scroller>
