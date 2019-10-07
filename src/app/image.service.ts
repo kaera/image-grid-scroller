@@ -40,7 +40,8 @@ export class ImageService {
           .filter(({ height_s }) => height_s >= 160 && height_s <= 180)
           .map(({ description, ownername, title, url_s }) => {
             return {
-              description,
+              description: description._content,
+              ownername,
               src: url_s,
               title: `${title} - ${ownername}`
             }
